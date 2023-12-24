@@ -3,7 +3,19 @@ package lesson3;
 public class Runner {
 
   public static void main(String[] args) {
+    CompositionSample compositionSample1 = new CompositionSample();
+    CompositionSample compositionSample2 = new CompositionSample("Chair");
+    System.out.println(compositionSample1.getParticle().getName());
+    System.out.println(compositionSample2.getParticle().getName());
 
+    System.out.println("---------------------------");
+
+    Particle particle = new Particle("Sofa");
+    AggregationSample aggregationSample1 = new AggregationSample();
+    AggregationSample aggregationSample2 = new AggregationSample(particle);
+
+    System.out.println(aggregationSample1.getParticle());
+    System.out.println(aggregationSample2.getParticle().getName());
   }
 
   private static void workingWithOrdinals() {
