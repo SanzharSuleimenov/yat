@@ -1,92 +1,33 @@
 package lesson4;
 
-public class Cat {
+public class Cat extends Pet {
 
-  private String name;
-  private double height;
-  private double width;
-  private double weight;
-  private String breed;
-  private String sound;
-  private int legs;
+  private int lives;
 
   public Cat(String name, double height, double width, double weight, String breed, String sound,
       int legs) {
-    this.name = name;
-    this.height = height;
-    this.width = width;
-    this.weight = weight;
-    this.breed = breed;
-    this.sound = sound;
-    this.legs = legs;
+    this(name, height, width, weight, breed, sound, legs, 9);
   }
 
-  public String getName() {
-    return name;
+  public Cat(String name, double height, double width, double weight, String breed, String sound,
+      int legs, int lives) {
+    super(name, height, width, weight, breed, sound, legs);
+    this.lives = lives;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public double getHeight() {
-    return height;
-  }
-
-  public void setHeight(double height) {
-    this.height = height;
-  }
-
-  public double getWidth() {
-    return width;
-  }
-
-  public void setWidth(double width) {
-    this.width = width;
-  }
-
-  public double getWeight() {
-    return weight;
-  }
-
-  public void setWeight(double weight) {
-    this.weight = weight;
-  }
-
-  public String getBreed() {
-    return breed;
-  }
-
-  public void setBreed(String breed) {
-    this.breed = breed;
-  }
-
-  public String getSound() {
-    return sound;
-  }
-
-  public void setSound(String sound) {
-    this.sound = sound;
-  }
-
-  public int getLegs() {
-    return legs;
-  }
-
-  public void setLegs(int legs) {
-    this.legs = legs;
+  public int getLives() {
+    return this.lives;
   }
 
   @Override
   public String toString() {
-    return "Cat{" +
-        "name='" + name + '\'' +
-        ", height=" + height +
-        ", width=" + width +
-        ", weight=" + weight +
-        ", breed='" + breed + '\'' +
-        ", sound='" + sound + '\'' +
-        ", legs=" + legs +
-        '}';
+    // System.out.printf("Cat has %d lives. %s", lives, super.toString());
+    return "Cat has %d lives. ".formatted(lives) + super.toString();
+  }
+
+  public void makeSound(int times) {
+    for (int i = 0; i < times; i++) {
+      makeSound();
+    }
   }
 }

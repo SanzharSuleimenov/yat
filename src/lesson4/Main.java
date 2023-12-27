@@ -13,12 +13,16 @@ public class Main {
     String sound = "Whaf-woof";
     int legs = 4;
 
-    Dog rex = new Dog(name, height, width, weight, breed, sound, legs);
-    Cat kitty = new Cat("Kitty", height, width, weight, breed, sound, legs);
-    Hamster space = new Hamster("Space", height, width, weight, breed, sound, legs);
-    System.out.println(rex);
+    Pet rex = new Dog(name, height, width, weight, breed, sound, legs);
+    Cat kitty = new Cat("Kitty", height, width / 2, weight, breed, "Meow Meow", legs, 12);
+    Pet space = new Hamster("Space", height, width / 4.0, weight, breed, "Chwak Chwak", legs);
+    System.out.println(rex.getBreed());
     System.out.println(kitty);
-    System.out.println(space);
+    System.out.println(space.getWidth());
+    // is a
+
+    System.out.println(kitty.getLives());
+    kitty.makeSound(3);
   }
 
   private static void case1() {

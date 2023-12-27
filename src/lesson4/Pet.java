@@ -77,6 +77,10 @@ public class Pet {
     this.legs = legs;
   }
 
+  protected void makeSound() {
+    System.out.println(name + " says " + sound);
+  }
+
   @Override
   public String toString() {
     return "Pet{" +
