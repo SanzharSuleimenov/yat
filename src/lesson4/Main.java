@@ -14,15 +14,38 @@ public class Main {
     int legs = 4;
 
     Pet rex = new Dog(name, height, width, weight, breed, sound, legs);
-    Cat kitty = new Cat("Kitty", height, width / 2, weight, breed, "Meow Meow", legs, 12);
+    Object o = rex;
+    System.out.println(rex);
+    System.out.println(rex.hashCode());
+    System.out.println("------------------");
+    System.out.println(o);
+    System.out.println(o.hashCode());
+  }
+
+  private static void inheritanceExample() {
+    String name = "T-Rex";
+    double height = 1.3;
+    double width = 0.4;
+    double weight = 24;
+    String breed = "Hunter";
+    String sound = "Whaf-woof";
+    int legs = 4;
+
+    Pet rex = new Dog(name, height, width, weight, breed, sound, legs);
+    Pet kitty = new Cat("Kitty", height, width / 2, weight, breed, "Meow Meow", legs, 12);
     Pet space = new Hamster("Space", height, width / 4.0, weight, breed, "Chwak Chwak", legs);
+
+    if (kitty == rex) {
+      System.out.println("Kit is Rex");
+    }
+
+    if (kitty.equals(rex)) {
+      System.out.println("Rex is Kitty");
+    }
+
     System.out.println(rex.getBreed());
     System.out.println(kitty);
     System.out.println(space.getWidth());
-    // is a
-
-    System.out.println(kitty.getLives());
-    kitty.makeSound(3);
   }
 
   private static void case1() {

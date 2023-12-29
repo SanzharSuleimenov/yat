@@ -1,6 +1,6 @@
 package lesson4;
 
-public class Pet {
+public class Pet extends Animal {
 
   private String name;
   private double height;
@@ -81,16 +81,7 @@ public class Pet {
     System.out.println(name + " says " + sound);
   }
 
-  @Override
-  public String toString() {
-    return "Pet{" +
-        "name='" + name + '\'' +
-        ", height=" + height +
-        ", width=" + width +
-        ", weight=" + weight +
-        ", breed='" + breed + '\'' +
-        ", sound='" + sound + '\'' +
-        ", legs=" + legs +
-        '}';
+  public void someMethod() {
+    System.out.println("Hello, I'm a Pet! But this method is private...");
   }
 }

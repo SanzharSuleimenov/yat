@@ -9,14 +9,6 @@ public class Dog extends Pet {
 
   @Override // переопределения
   public String toString() {
-    return "Dog{" +
-        "name='" + getName() + '\'' +
-        ", height=" + getHeight() +
-        ", width=" + getWidth() +
-        ", weight=" + getWeight() +
-        ", breed='" + getBreed() + '\'' +
-        ", sound='" + getSound() + '\'' +
-        ", legs=" + getLegs() +
-        '}';
+    return super.toString();
   }
 }
