@@ -7,6 +7,10 @@ public class Runner {
   private static Random random = new Random();
 
   public static void main(String[] args) {
+
+  }
+
+  private static void test3() {
     MyPoint[] myPoints = new MyPoint[10];
     for (int i = 0; i < 10; i++) {
       myPoints[i] = new MyPoint(random.nextInt(20), random.nextInt(20));
