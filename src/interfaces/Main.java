@@ -1,8 +1,16 @@
 package interfaces;
 
+import java.io.IOException;
+
 public class Main {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
+    AudioPlayer xiaomiAudioPlayer = new XiaomiAudioPlayer();
+    xiaomiAudioPlayer.play();
+    xiaomiAudioPlayer.pause();
+  }
+
+  private static void oneTwoThree() throws IOException {
     AppleIpod appleIpod = new AppleIpod();
     BoseAudioPro boseAudioPro = new BoseAudioPro();
     SonyWalkman sonyWalkman = new SonyWalkman();
@@ -22,6 +30,8 @@ public class Main {
     sony.next();
 
     System.out.print("-------------------\n");
+
+    sonyWalkman.close();
   }
 
 }
