@@ -3,14 +3,53 @@ package files;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Path;
 import java.util.Scanner;
 
 public class Main {
 
+  private static final String RELATIVE_PATH =
+      "resources" + File.separator + "read" + File.separator + "test" + File.separator;
   private static Scanner scanner = new Scanner(System.in);
 
-  public static void main(String[] args) throws IOException {
+  public static void main(String[] args) throws IOException, BadStartException {
+
+  }
+
+  private static void repeatFileCreationAndWrites() throws IOException, BadStartException {
+    File dir = new File(RELATIVE_PATH);
+    boolean dirExists = true;
+    if (!dir.exists()) {
+      dirExists = dir.mkdirs();
+    }
+
+    File file = new File(RELATIVE_PATH + "test.txt");
+    boolean fileExists = true;
+    if (!file.exists()) {
+      fileExists = file.createNewFile();
+    }
+
+    if (!dirExists || !fileExists) {
+      throw new BadStartException();
+    }
+
+    System.out.println("Everything is set up!");
+    System.out.print("Message: ");
+    String message = scanner.nextLine();
+
+    try (FileWriter fw = new FileWriter(file, true);
+        PrintWriter writer = new PrintWriter(fw)) {
+
+      writer.print("New message: ");
+      writer.println(message);
+
+    } catch (IOException e) {
+      System.out.println(e.getMessage());
+    }
+  }
+
+  private static void writeToFiles() {
     MyFile file = instantiateFile();
     System.out.print("Enter text: ");
     String text = scanner.nextLine();
