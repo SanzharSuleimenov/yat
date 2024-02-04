@@ -4,8 +4,11 @@ import java.io.Serializable;
 
 public class MyClass implements Serializable {
 
+  private static final long serialVersionUID = 12L;
+
   private int year;
-  private String secret;
+  private String publicKey;
+  private transient String privateKey;
 
   public int getYear() {
     return year;
@@ -15,11 +18,19 @@ public class MyClass implements Serializable {
     this.year = year;
   }
 
-  public String getSecret() {
-    return secret;
+  public String getPublicKey() {
+    return publicKey;
   }
 
-  public void setSecret(String secret) {
-    this.secret = secret;
+  public void setPublicKey(String publicKey) {
+    this.publicKey = publicKey;
+  }
+
+  public String getPrivateKey() {
+    return privateKey;
+  }
+
+  public void setPrivateKey(String privateKey) {
+    this.privateKey = privateKey;
   }
 }

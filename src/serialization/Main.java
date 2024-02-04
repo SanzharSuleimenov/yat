@@ -32,7 +32,8 @@ public class Main {
       Object object = ois.readObject();
       MyClass myClass = (MyClass) object;
 
-      System.out.println(myClass.getSecret());
+      System.out.println(myClass.getPrivateKey());
+      System.out.println(myClass.getPublicKey());
       System.out.println(myClass.getYear());
 
     } catch (IOException e) {
@@ -45,7 +46,8 @@ public class Main {
   private static void serializing() throws IOException {
     MyClass myObject = new MyClass();
     myObject.setYear(2024);
-    myObject.setSecret("Tsss... You gonna be a programmer soon...");
+    myObject.setPublicKey("pub_key_2412342344");
+    myObject.setPrivateKey("pri_key_72w873y32742842");
 
     File file = getSaveFile();
 
