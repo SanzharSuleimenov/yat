@@ -1,0 +1,2 @@
+Hello!\r\nHow are you?
+New line please\\r\\nThird line\r\nTHirdhohoho ho ho ho\r\nno non on o
