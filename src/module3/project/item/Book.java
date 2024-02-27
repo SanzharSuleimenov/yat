@@ -39,4 +39,18 @@ public class Book extends LibraryItem implements PaperItem, BorrowableItem {
   public void setIsbn(String isbn) {
     this.isbn = isbn;
   }
+
+  @Override
+  public void displayDetails() {
+    System.out.printf("""
+            Book
+              ID:%d,
+              Name: %s,
+              isAvailable: %s,
+              Author: %s,
+              Title: %s,
+              ISBN: %s
+              """,
+        super.getId(), super.getName(), super.isAvailable(), author, title, isbn);
+  }
 }

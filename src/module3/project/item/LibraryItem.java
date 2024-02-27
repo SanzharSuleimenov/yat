@@ -1,6 +1,10 @@
 package module3.project.item;
 
-public abstract class LibraryItem {
+import java.io.Serializable;
+
+public abstract class LibraryItem implements Serializable {
+
+  private static final long serialVersionUID = 1235L;
 
   private int id;
   private String name;

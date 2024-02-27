@@ -1,6 +1,10 @@
 package module3.project.item;
 
-public class LibraryStore {
+import java.io.Serializable;
+
+public class LibraryStore implements Serializable {
+
+  private static final long serialVersionUID = 1234L;
 
   private int idx = 0;
   private final LibraryItem[] libraryItems;
