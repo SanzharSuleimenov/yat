@@ -15,11 +15,47 @@ import module3.project.item.Dvd;
 import module3.project.item.LibraryItem;
 import module3.project.item.LibraryStore;
 import module3.project.item.Magazine;
+import module3.project.user.Librarian;
+import module3.project.user.Member;
+import module3.project.user.User;
+import module3.project.user.UserStore;
 
 public class Runner {
 
   public static void main(String[] args) {
-    serde();
+    User librarian = new Librarian(1, "lib1", "1234", "Indiana", "Jones", "Librarian", 29);
+    User bob = new Member(2, "bob1", "1234", "Bob", "Bobson", "Member", true);
+    User alice = new Member(3, "alice1", "1234", "Alice", "Winter", "Member", false);
+
+    UserStore userStore = new UserStore(5);
+    userStore.add(librarian);
+    userStore.add(bob);
+    userStore.add(alice);
+
+    for (User user: userStore.getUsers()) {
+      if (user == null) break;
+      System.out.println(user);
+    }
+
+    System.out.println("-----------------");
+
+    User napoleon = new Member(4, "france", "vivalefrance", "Napoleon", "Bonaparte", "Member", false);
+    userStore.add(napoleon);
+
+    for (User user: userStore.getUsers()) {
+      if (user == null) break;
+      System.out.println(user);
+    }
+
+    System.out.println("-----------------");
+
+    User bobCopy = new Member(2, "bob1", "1234", "Bob", "Bobson", "Member", true);
+
+    userStore.remove(bobCopy);
+    for (User user: userStore.getUsers()) {
+      if (user == null) break;
+      System.out.println(user);
+    }
   }
 
   private static void serde() {
